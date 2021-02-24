@@ -240,6 +240,11 @@ class StopWatchTimer {
       _stopTime += DateTime.now().millisecondsSinceEpoch - _startTime;
     }
   }
+  
+  void setTime(Duration time) {
+    this._startTime =
+        time.inMilliseconds + DateTime.now().millisecondsSinceEpoch;
+  }
 
   void _reset() {
     if (_timer != null && _timer.isActive) {
